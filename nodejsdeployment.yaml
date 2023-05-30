@@ -15,8 +15,9 @@ spec:
         app: nodejs
     spec:
       containers:
-      - name: nodejs-01
-        image: node-01:latest
+      - name: node-01
+        image: asia-south1-docker.pkg.dev/devops-374009/nodejsproject/node-01:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 9981
 ---
