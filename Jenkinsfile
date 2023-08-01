@@ -32,7 +32,7 @@ pipeline {
      stage ('gcr push') {
             steps {
             // This step should not normally be used in your script. Consult the inline help for details.
-withDockerRegistry(credentialsId: 'gcr:git-jbash-123', url: 'https://gcr.io') {
+withDockerRegistry(credentialsId: 'gcr:git-jbash-123', url: 'https://gcr.io/git-jbash-123') {
     sh 'docker push gcr.io/git-jbash-123/nodejsappmss:${BUILD_NUMBER}'
 }
     }
