@@ -1,10 +1,10 @@
 pipeline {
     agent any
       environment{
-        //  PROJECT_ID = 'git-jbash-123'
-        //CLUSTER_NAME = 'jenkins'
-        //LOCATION = 'us-central1'
-        //CREDENTIALS_ID = 'git-jbash-123'
+        PROJECT_ID = 'git-jbash-123'
+        CLUSTER_NAME = 'jenkins'
+        LOCATION = 'us-central1'
+        CREDENTIALS_ID = 'git-jbash-123'
         buildNumber = "BUILD_NUMBER"
     
     }
