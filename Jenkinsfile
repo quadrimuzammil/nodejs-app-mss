@@ -41,7 +41,7 @@ withDockerRegistry(credentialsId: 'gcr:git-jbash-123', url: 'https://gcr.io/git-
              stage('Deploy to GKE') {
             steps{
                 sh "sed -i 's/nodejs:latest/nodejsappmss:${BUILD_NUMBER}/g' nodejsdeployment.yaml"
-                step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
+                step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'nodejsdeployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
             }
         }
          
