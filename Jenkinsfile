@@ -42,8 +42,4 @@ withDockerRegistry(credentialsId: 'gcr:git-jbash-123', url: 'https://gcr.io') {
          
          
             }
-        }
-   
-   
-    }
-}
+        }                          
