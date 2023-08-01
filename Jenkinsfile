@@ -27,8 +27,8 @@ pipeline {
             sh 'docker build -t gcr.io/git-jbash-123/nodejsappmss:${BUILD_NUMBER} .'
     }
             }
-        }
-     stage('Push Docker Image to gcr') {
+        
+     stage ('gcr push') {
             steps {
             // This step should not normally be used in your script. Consult the inline help for details.
 withDockerRegistry(credentialsId: 'gcr:git-jbash-123', url: 'https://gcr.io') {
@@ -36,10 +36,10 @@ withDockerRegistry(credentialsId: 'gcr:git-jbash-123', url: 'https://gcr.io') {
 }
     }
          
+     }
          
          
          
-         
-         
-            }
+    }
+            
         }                          
