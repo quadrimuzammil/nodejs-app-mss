@@ -17,7 +17,7 @@ pipeline {
     stage('Build_Package') {
             steps {
                 nodejs(nodeJSInstallationName: 'nodejs15') {
-        //sh 'npm config fix'
+        sh 'npm config fix'
         sh 'npm install'
     }
             }
