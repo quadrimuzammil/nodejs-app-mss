@@ -1,10 +1,10 @@
 pipeline {
     agent any
       environment{
-        //  PROJECT_ID = 'devops-374009'
-        //CLUSTER_NAME = 'two-wheeler'
+        //  PROJECT_ID = 'git-jbash-123'
+        //CLUSTER_NAME = 'jenkins'
         //LOCATION = 'us-central1'
-        //CREDENTIALS_ID = 'devops-374009'
+        //CREDENTIALS_ID = 'git-jbash-123'
         buildNumber = "BUILD_NUMBER"
     
     }
@@ -38,7 +38,12 @@ withDockerRegistry(credentialsId: 'gcr:git-jbash-123', url: 'https://gcr.io/git-
     }
          
      }
-         
+             stage('Deploy to GKE') {
+            steps{
+                sh "sed -i 's/nodejs:latest/nodejsappmss:${BUILD_NUMBER}/g' nodejsdeployment.yaml"
+                step([$class: 'KubernetesEngineBuilder', projectId: env.PROJECT_ID, clusterName: env.CLUSTER_NAME, location: env.LOCATION, manifestPattern: 'deployment.yaml', credentialsId: env.CREDENTIALS_ID, verifyDeployments: true])
+            }
+        }
          
          
     }
