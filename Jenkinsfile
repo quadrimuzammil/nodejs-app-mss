@@ -14,14 +14,14 @@ pipeline {
                 git credentialsId: 'github_id', url: 'https://github.com/quadrimuzammil/nodejs-app-mss.git'
             }
         }
-    stage('Build_Package') {
-            steps {
-                nodejs(nodeJSInstallationName: 'nodejs15') {
-        sh 'npm config fix'
-        sh 'npm install'
-    }
-            }
-        }
+   // stage('Build_Package') {
+     //       steps {
+       //         nodejs(nodeJSInstallationName: 'nodejs15') {
+        //sh 'npm config fix'
+       // sh 'npm install'
+    //}
+      //      }
+       // }
     
     stage('Build docker image') {
             steps {
