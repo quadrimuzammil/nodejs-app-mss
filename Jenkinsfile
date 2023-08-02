@@ -2,7 +2,7 @@ pipeline {
     agent any
       environment{
         PROJECT_ID = 'git-jbash-123'
-        CLUSTER_NAME = 'jenkins'
+        CLUSTER_NAME = 'gke-cluster'
         LOCATION = 'us-central1'
         CREDENTIALS_ID = 'git-jbash-123'
         buildNumber = "BUILD_NUMBER"
